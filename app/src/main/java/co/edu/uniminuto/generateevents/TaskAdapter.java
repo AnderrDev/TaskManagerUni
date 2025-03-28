@@ -1,12 +1,13 @@
-package co.edu.uniminuto.generateevents;// TaskAdapter.java
+package co.edu.uniminuto.generateevents;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ArrayAdapter;
+
+import androidx.annotation.NonNull;
 
 import java.util.List;
 
@@ -15,8 +16,9 @@ public class TaskAdapter extends ArrayAdapter<Task> {
         super(context, 0, tasks);
     }
 
+    @NonNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         Task task = getItem(position);
 
         if (convertView == null) {
@@ -26,6 +28,7 @@ public class TaskAdapter extends ArrayAdapter<Task> {
         TextView txtTitle = convertView.findViewById(R.id.txtTaskTitle);
         TextView txtDescription = convertView.findViewById(R.id.txtTaskDescription);
 
+        assert task != null;
         txtTitle.setText(task.getTitle());
         txtDescription.setText(task.getDescription());
 

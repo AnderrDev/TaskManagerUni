@@ -1,7 +1,6 @@
 package co.edu.uniminuto.generateevents;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,10 +34,10 @@ public class EditTaskActivity extends Activity {
 
 
     private void saveChanges() {
-            String updatedTitle = editTitle.getText().toString();
-            String updatedDescription = editDescription.getText().toString();
+        String updatedTitle = editTitle.getText().toString().trim();
+        String updatedDescription = editDescription.getText().toString().trim();
 
-            // Buscar tarea por ID y actualizarla
+        if (!updatedTitle.isEmpty() && !updatedDescription.isEmpty()) {
             Task taskToUpdate = MainActivity.taskList.get(taskId);
             int taskIdToUpdate = taskToUpdate.getId();
 
@@ -46,13 +45,15 @@ public class EditTaskActivity extends Activity {
                 if (MainActivity.taskList.get(i).getId() == taskIdToUpdate) {
                     MainActivity.taskList.get(i).setTitle(updatedTitle);
                     MainActivity.taskList.get(i).setDescription(updatedDescription);
+                    MainActivity.saveTasks(EditTaskActivity.this);  // Pasa el contexto
                     break;
                 }
             }
 
-            // Regresar con éxito
             setResult(RESULT_OK);
             finish();
+        }
+
     }
     private void confirmDelete() {
         new AlertDialog.Builder(this)
@@ -62,22 +63,20 @@ public class EditTaskActivity extends Activity {
                     Task taskToDelete = MainActivity.taskList.get(taskId);
                     int taskIdToDelete = taskToDelete.getId();
 
-                    // Eliminar tarea usando el ID correcto
                     for (int i = 0; i < MainActivity.taskList.size(); i++) {
                         if (MainActivity.taskList.get(i).getId() == taskIdToDelete) {
                             MainActivity.taskList.remove(i);
+                            MainActivity.saveTasks(EditTaskActivity.this);  // Pasa contexto aquí
                             break;
                         }
                     }
 
-                    // Enviar resultado y cerrar
-                    Intent resultIntent = new Intent();
-                    resultIntent.putExtra("taskId", taskId);
-                    setResult(RESULT_OK, resultIntent);
+                    setResult(RESULT_OK);
                     finish();
                 })
                 .setNegativeButton("No", null)
                 .show();
     }
+
 
 }

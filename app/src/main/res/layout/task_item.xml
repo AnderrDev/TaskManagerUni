@@ -9,7 +9,7 @@
         android:id="@+id/txtTaskTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Titulo"
+        android:text="@string/titulo"
         android:textStyle="bold"
         android:textSize="16sp"/>
 
@@ -17,6 +17,6 @@
         android:id="@+id/txtTaskDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Descripción"
+        android:text="@string/descripci_ns"
         android:textSize="14sp"/>
 </LinearLayout>

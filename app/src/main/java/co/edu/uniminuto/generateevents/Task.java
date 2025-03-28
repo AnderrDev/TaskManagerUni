@@ -1,4 +1,4 @@
-package co.edu.uniminuto.generateevents;// Task.java
+package co.edu.uniminuto.generateevents;
 
 public class Task {
     private int id;

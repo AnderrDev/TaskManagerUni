@@ -6,12 +6,18 @@
     android:padding="16dp"
     android:background="@color/background">
 
+    <!-- Barra de búsqueda -->
+    <SearchView
+        android:id="@+id/searchViewTasks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="@string/buscar_tarea" />
     <!-- Título -->
     <EditText
         android:id="@+id/editTaskTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Título de la tarea"
+        android:hint="@string/t_tulo_de_la_tarea"
         android:padding="10dp"
         android:background="@drawable/input_bg"/>
 
@@ -20,7 +26,7 @@
         android:id="@+id/editTaskDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Descripción de la tarea"
+        android:hint="@string/descripci_n_de_la_tarea"
         android:padding="10dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/input_bg"/>
@@ -30,7 +36,7 @@
         android:id="@+id/btnAddTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Agregar Tarea"
+        android:text="@string/agregar_tarea"
         android:layout_marginTop="12dp"
         android:background="@color/primary"
         android:textColor="@android:color/white"/>

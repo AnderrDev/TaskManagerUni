@@ -9,7 +9,7 @@
         android:id="@+id/editTaskTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Título"
+        android:hint="@string/t_tulo"
         android:padding="10dp"
         android:background="@drawable/input_bg"/>
 
@@ -17,7 +17,7 @@
         android:id="@+id/editTaskDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Descripción"
+        android:hint="@string/descripci_n"
         android:padding="10dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/input_bg"/>
@@ -26,7 +26,7 @@
         android:id="@+id/btnSaveTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Guardar"
+        android:text="@string/guardar"
         android:layout_marginTop="12dp"
         android:background="@color/material_dynamic_primary0"
         android:textColor="@android:color/white"/>
@@ -35,7 +35,7 @@
         android:id="@+id/btnDeleteTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Eliminar"
+        android:text="@string/eliminar"
         android:layout_marginTop="8dp"
         android:background="#F44336"
         android:textColor="@android:color/white"/>
