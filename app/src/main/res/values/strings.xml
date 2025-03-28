@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GenerateEvents</string>
+    <string name="search_task">Search task</string>
+    <string name="edit_task">Edit task</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+</resources>

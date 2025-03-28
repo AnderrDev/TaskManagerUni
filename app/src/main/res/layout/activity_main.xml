@@ -1,0 +1,44 @@
+<!-- activity_main.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/background">
+
+    <!-- Título -->
+    <EditText
+        android:id="@+id/editTaskTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Título de la tarea"
+        android:padding="10dp"
+        android:background="@drawable/input_bg"/>
+
+    <!-- Descripción -->
+    <EditText
+        android:id="@+id/editTaskDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descripción de la tarea"
+        android:padding="10dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/input_bg"/>
+
+    <!-- Botón Agregar Tarea -->
+    <Button
+        android:id="@+id/btnAddTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agregar Tarea"
+        android:layout_marginTop="12dp"
+        android:background="@color/primary"
+        android:textColor="@android:color/white"/>
+
+    <!-- ListView para tareas -->
+    <ListView
+        android:id="@+id/listViewTasks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"/>
+</LinearLayout>
